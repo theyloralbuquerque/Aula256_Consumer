@@ -2,7 +2,6 @@ package application;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 
 import entities.Product;
 
@@ -19,11 +18,7 @@ public class Program {
 
 		double factor = 1.1;
 
-		Consumer<Product> cons = p -> {    // Criação do Consumer cons do tipo Product.
-			p.setPrice(p.getPrice() * factor);
-		};
-
-		list.forEach(cons);                // forEach() percorre a coleção e excuta um Consumer nessa coleção com base no Consumer cons.
+		list.forEach(p -> p.setPrice(p.getPrice() * factor)); // Expressão lambda direto no forEach(), o forEach() vai percorrer toda a coleção executando a expressão lambda.
 
 		list.forEach(System.out::println); // Refrence Method para executar o println.
 	}
