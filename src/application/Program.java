@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import entities.Product;
-import util.PriceUpdate;
 
 public class Program {
 
@@ -17,7 +16,7 @@ public class Program {
 		list.add(new Product("Tablet", 350.50));
 		list.add(new Product("HD Case", 80.90));
 
-		list.forEach(new PriceUpdate()); // forEach() percorre toda a coleção e executa um Consumer nessa coleção para cada elemento.
+		list.forEach(Product::staticPriceUpdate); // forEach() percorre toda a coleção e executando um Consumer chamando o método staticPriceUpdate para cada elemento.
 
 		list.forEach(System.out::println); // Refrence Method para executar o println.
 	}
